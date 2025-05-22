@@ -122,3 +122,86 @@ footer {
 }
 
 /*End of home page*/
+
+/*Login page style sheet*/
+.login-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.login-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  width: 100%;
+  padding: 40px;
+  /*background-color: rgba(255, 255, 255, 0.95);*/
+  border-radius: 12px;
+  /*box-shadow: 0 0 15px rgba(0,0,0,0.1);*/
+}
+.login-page, .signup-page {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  padding: 40px;
+}
+
+.login-left, .signup-page {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+}
+
+.login-right {
+  flex-grow: 1;
+  color: #2f2f92;
+  margin-left: 60px;
+}
+
+.login-right h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.login-right ul {
+  list-style: none;
+  padding: 0;
+  line-height: 1.8;
+}
+.logo-img {
+  width: 160px;
+  height: auto;
+}
+
+/*form page style*/
+form input, form select {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form button.login-btn {
+  margin-top: 15px;
+  width: 100%;
+}
+
+.forgot-link, .signup-link, .back-login {
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+/*End of login page*/
+
+/*Signup page*/
