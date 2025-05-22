@@ -240,6 +240,237 @@ form button.login-btn {
 /*end of signup*/
 
 /*Admins-dashboard page style sheet*/
+.dashboard-container {
+  display: flex;
+  min-height: 100vh;
+}
 
+.sidebar {
+  width: 220px;                      /* slightly narrower to reduce impact */
+  background-color: #f09ccd25;         /* softer, lighter gray */
+  color: #0a0a0a;
+  padding: 1.5rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;                     /* full height */
+  overflow-y: auto;                  /* enable scroll if content grows */
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.05); /* soft shadow to distinguish */
+  z-index: 1000;                     /* ensure it sits behind modals but above background */
+}
+
+.sidebar-logo {
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text{
+  font-size: 1.5rem;
+  color: #481881;
+  font-style: italic;
+  font-weight: bold;
+  margin-bottom: 1rem; 
+}
+
+.nav-menu {
+  list-style: none;
+}
+
+.nav-menu li {
+  margin-bottom: 0.5rem;
+}
+
+.nav-menu a {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  color: #0a0a0a;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.nav-menu a:hover,
+.nav-menu a.active {
+  background-color: rgba(163, 160, 160, 0.1);
+  color: white;
+}
+
+.nav-menu a i {
+  margin-right: 0.5rem;
+  width: 20px;
+  text-align: center;
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 250px;
+  padding: 2rem;
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #000000;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #eee;
+  color: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.75rem;
+  font-weight: bold;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: 600;
+  color: dark-blue;
+}
+
+.user-role {
+  font-size: 0.8rem;
+  color: var(--gray);
+}
+
+/* Dashboard Cards */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns */
+  grid-auto-rows: auto;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+}
+
+/* Force row 2 cards to span only 2 columns */
+.card-grid .card:nth-child(4) {
+  grid-column: 1 / 2;
+}
+
+.card-grid .card:nth-child(5) {
+  grid-column: 2/ 3;
+}
+
+.card-header {
+  margin-bottom: 1rem;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  color: var(--dark-blue);
+  margin-bottom: 0.25rem;
+}
+
+.card-subtitle {
+  font-size: 0.9rem;
+  color: var(--gray);
+}
+
+.btn{
+  display: center;
+  text-align: center;
+  text-decoration: none;
+  background-color: #6d3fcf;
+  color: white;
+  padding: 7px 18px;
+  /*font-weight: bold;*/
+  border-radius: 8px;
+  font-size: 1em;  
+  margin-top: 1rem;  
+}
+
+/* Evaluation table */
+.t-card{
+  background-color: rgb(242, 236, 252);
+  border-radius: 10px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  /*max-width: 600px;*/
+  padding: 1.5rem;
+}
+
+.evaluation-table {
+  margin: 0 auto;                     /* centers the table horizontally */
+  width: 100%;
+  /*max-width: 420px;*/
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: visible;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.evaluation-table th {
+  background-color: #a68dff;
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  text-align: left;
+  padding: 1rem;
+}
+
+.evaluation-table td {
+  padding: 1rem;
+  border-bottom: 1px solid #EDF2F7;
+}
+
+.evaluation-table tr:last-child td {
+  border-bottom: none;
+}
+
+.evaluation-table tr:nth-child(even) {
+  /*background-color: #F7FAFC;*/
+}
+
+.score-cell {
+  width: 75px;
+  text-align: center;
+}
+
+.score-1,
+.score-2 {
+  background-color: #FED7D7;
+}
+
+.score-3 {
+  background-color: #FEFCBF;
+}
+
+.score-4 {
+  background-color: #C6F6D5;
+}
+
+.score-5 {
+  background-color: #9AE6B4;
+}
+
+.overall-score {
+  font-weight: bold;
+  background-color: #EBF4FF;
+}
+/*end of dashboard page*/
 
 
