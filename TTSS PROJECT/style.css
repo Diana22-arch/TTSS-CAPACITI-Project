@@ -183,6 +183,13 @@ footer {
   height: auto;
 }
 
+.sub-logo{
+  font-size: 1.5rem;
+  color: #4a148c;
+  font-style: italic;
+  margin-bottom: 1rem; 
+}
+
 /*form page style*/
 form input, form select {
   display: block;
@@ -205,3 +212,31 @@ form button.login-btn {
 /*End of login page*/
 
 /*Signup page*/
+.signup-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.signup-page {
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.signup-page form {
+  width: 100%;
+  max-width: 400px;
+  background-color: rgba(255, 255, 255, 0.95);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+/*end of signup*/
+
+
