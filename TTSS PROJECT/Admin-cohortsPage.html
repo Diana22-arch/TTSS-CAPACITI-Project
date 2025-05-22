@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cohorts - Tech Talent Scorecard System</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <div class="dashboard-container">
+    <aside class="sidebar">
+       <div class="logo-container" style="display: flex; align-items: center; gap: 0.5rem;">
+            <img src="logo.png" alt="CAPACITI Logo" class="logo-img" style="width: 180px;" />
+            <a href="homePage.html" class="home" style="font-size: 30px; color: #070707; text-decoration: none;">&#8962;</a>
+       </div>
+        <div class="sidebar-logo">
+           <div class="logo-text">TTSS</div>
+        </div>
+
+      <ul class="nav-menu">
+        <li>
+          <a href="admin-dashboardPage.html" class="active">
+            <i class="fas fa-chart-line"></i> Dashboard
+          </a>
+        </li>
+        <li>
+          <a href="Admin-cohortsPage.html">
+            <i class="fas fa-users"></i> Cohorts
+          </a>
+        </li>
+        <li>
+          <a href="admin-groups.html">
+            <i class="fas fa-layer-group"></i> Groups
+          </a>
+        </li>
+        <li>
+          <a href="admin-evaluations.html">
+            <i class="fas fa-clipboard-check"></i> Evaluations
+          </a>
+        </li>
+        <li>
+          <a href="admin-mentors.html">
+            <i class="fas fa-user-tie"></i> Mentors
+          </a>
+        </li>
+        <li>
+          <a href="admin-students.html">
+            <i class="fas fa-user-graduate"></i> Students
+          </a>
+        </li>
+        <li>
+          <a href="admin-reports.html">
+            <i class="fas fa-file-alt"></i> Reports
+          </a>
+        </li>
+        <li>
+          <a href="admin-settings.html">
+            <i class="fas fa-cog"></i> Settings
+          </a>
+        </li>
+        <li>
+          <a href="login.html">
+            <i class="fas fa-sign-out-alt"></i> Logout
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <div class="dashboard-header">
+        <h1>Cohorts Management</h1>
+        <div class="user-profile">
+          <div class="user-avatar">A</div>
+          <div class="user-info">
+            <div class="user-name">Admin User</div>
+            <div class="user-role">Administrator</div>
+          </div>
+        </div>
+      </div>
+
+      <section class="active-cohorts">
+        <h2>Active Cohorts</h2>
+        <button class="add-cohort-btn" onclick="openCohortModal()">Add New Cohort</button>
+
+        <!-- Cohort Modal Form -->
+        <div id="cohortModal" class="modal">
+          <div class="modal-content">
+            <h2>Add New Cohort</h2>
+            <form id="cohortForm">
+              <div class="form-group">
+                <label for="cohortName">Cohort Name</label>
+                <input type="text" id="cohortName" name="cohortName" required>
+              </div>
+              <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input type="date" id="startDate" name="startDate" required>
+              </div>
+              <div class="form-group">
+                <label for="endDate">End Date</label>
+                <input type="date" id="endDate" name="endDate" required>
+              </div>
+              <div class="form-group">
+                <label for="students">Number of Students</label>
+                <input type="number" id="students" name="students" min="1" required>
+              </div>
+              <div class="form-group">
+                <label for="status">Status</label>
+                <select id="status" name="status" required>
+                  <option value="active">Active</option>
+                  <option value="inactive">Inactive</option>
+                </select>
+              </div>
+              <div class="modal-buttons">
+                <button type="button" class="cancel-btn" onclick="closeCohortModal()">Cancel</button>
+                <button type="submit" class="submit-btn">Submit</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        
+        <div class="cohorts-table">
+          <table>
+            <thead>
+              <tr>
+                <th>Cohort Name</th>
+                <th>Start Date</th>
+                <th>End Date</th>
+                <th>Students</th>
+                <th>Status</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>AI Academy</td>
+                <td>Jan 15, 2025</td>
+                <td>Dec 15, 2025</td>
+                <td>30</td>
+                <td><span class="status-active">Active</span></td>
+                <td><a href="#" class="action-link">View</a></td>
+              </tr>
+              <tr>
+                <td>Cloud Computing</td>
+                <td>Feb 1, 2025</td>
+                <td>Jan 30, 2026</td>
+                <td>25</td>
+                <td><span class="status-active">Active</span></td>
+                <td><a href="#" class="action-link">View</a></td>
+              </tr>
+              <tr>
+                <td>Demand</td>
+                <td>Mar 1, 2025</td>
+                <td>Feb 28, 2026</td>
+                <td>30</td>
+                <td><span class="status-active">Active</span></td>
+                <td><a href="#" class="action-link">View</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
