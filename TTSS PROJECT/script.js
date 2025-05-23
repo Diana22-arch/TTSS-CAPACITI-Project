@@ -194,11 +194,9 @@ function updateCohortStudents() {
         }
       });
     });
+/*end of evaluation page functionality*/
 
-      /*end of evaluation page functionality*/
-
-      /*evaluation page functionality*/
-      // JavaScript for report page
+// JavaScript for report page
 // Reports data - in a real application, this would come from an API
 const sampleReports = [
     {
@@ -370,3 +368,10 @@ const sampleReports = [
   });
  
  /*end of the functionality*/
+
+ /*mentor functionality page*/
+ // Placeholder for Add New Mentor functionality
+  function addMentor() {
+    alert('Add mentor functionality to be implemented');
+  }
+ /*end of functionality page*/

@@ -3,14 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Cohorts - Tech Talent Scorecard System</title>
+  <title>Mentors - Tech Talent Scorecard System</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="scripts.js" defer></script>
 </head>
 <body>
   <div class="dashboard-container">
-    <aside class="sidebar">
+      <aside class="sidebar">
        <div class="logo-container" style="display: flex; align-items: center; gap: 0.5rem;">
             <img src="logo.png" alt="CAPACITI Logo" class="logo-img" style="width: 180px;" />
             <a href="homePage.html" class="home" style="font-size: 30px; color: #070707; text-decoration: none;">&#8962;</a>
@@ -70,7 +71,7 @@
  
     <main class="main-content">
       <div class="dashboard-header">
-        <h1>Cohorts Management</h1>
+        <h1>Mentors Management</h1>
         <div class="user-profile">
           <div class="user-avatar">A</div>
           <div class="user-info">
@@ -80,53 +81,57 @@
         </div>
       </div>
  
-      <section class="active-cohorts">
-        <h2>Active Cohorts</h2>
-        <button class="add-cohort-btn">Add New Cohort</button>
-       
-        <div class="cohorts-table">
-          <table>
-            <thead>
-              <tr>
-                <th>Cohort Name</th>
-                <th>Start Date</th>
-                <th>End Date</th>
-                <th>Students</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>AI Academy</td>
-                <td>Jan 15, 2025</td>
-                <td>Dec 15, 2025</td>
-                <td>30</td>
-                <td><span class="status-active">Active</span></td>
-                <td><a href="#" class="action-link">Manage</a></td>
-              </tr>
-              <tr>
-                <td>Cloud Computing</td>
-                <td>Feb 1, 2025</td>
-                <td>Jan 30, 2026</td>
-                <td>25</td>
-                <td><span class="status-active">Active</span></td>
-                <td><a href="#" class="action-link">Manage</a></td>
-              </tr>
-              <tr>
-                <td>Demand</td>
-                <td>Mar 1, 2025</td>
-                <td>Feb 28, 2026</td>
-                <td>30</td>
-                <td><span class="status-active">Active</span></td>
-                <td><a href="#" class="action-link">Manage</a></td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
+      <div class="form-controls">
+        <button class="btn" onclick="addMentor()">Add New Mentor</button>
+      </div>
+ 
+      <div class="card">
+        <table class="evaluation-table">
+          <thead>
+            <tr>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Current Cohorts</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>John Smith</td>
+              <td>john.smith@email.com</td>
+              <td>AI/ML</td>
+              <td>Active</td>
+              <td><a href="#" class="view-link">View Profile</a></td>
+            </tr>
+            <tr>
+              <td>Sarah Johnson</td>
+              <td>sarah.j@email.com</td>
+              <td>Data Science</td>
+             
+              <td>Active</td>
+              <td><a href="#" class="view-link">View Profile</a></td>
+            </tr>
+            <tr>
+              <td>Michael Chen</td>
+              <td>m.chen@email.com</td>
+              <td>Cloud Computing</td>
+             
+              <td>Active</td>
+              <td><a href="#" class="view-link">View Profile</a></td>
+            </tr>
+            <tr>
+              <td>Emma Wilson</td>
+              <td>e.wilson@email.com</td>
+              <td>Web Development</td>
+             
+              <td>On Leave</td>
+              <td><a href="#" class="view-link">View Profile</a></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </main>
   </div>
-  <script src="script.js"></script>
 </body>
 </html>
