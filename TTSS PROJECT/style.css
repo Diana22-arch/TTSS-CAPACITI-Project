@@ -657,7 +657,7 @@ form button.login-btn {
 }
 
 .score-5-cell {
-  background-color: #37c769;
+  background-color: #7ae9a0;
 }
 
 .score-4-cell {
@@ -665,18 +665,18 @@ form button.login-btn {
 }
 
 .score-3-cell {
-  background-color: #ecea9d;
+  background-color: #f0eeb1;
 }
 
 .score-2-cell,
 .score-1-cell {
-  background-color: #f17373;
+  background-color: #eca2a2;
 }
 
 .comment-box {
   width: 100%;
   padding: 0.75rem;
-  border: 1px solid #E2E8F0;
+  border: 1px solid #a7abaf;
   border-radius: 5px;
   resize: vertical;
   min-height: 100px;
