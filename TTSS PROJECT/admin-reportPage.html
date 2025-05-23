@@ -1,17 +1,16 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Settings - Tech Talent Scorecard System</title>
+  <title>Reports - Tech Talent Scorecard System</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
   <div class="dashboard-container">
-    <aside class="sidebar">
+     <aside class="sidebar">
        <div class="logo-container" style="display: flex; align-items: center; gap: 0.5rem;">
             <img src="logo.png" alt="CAPACITI Logo" class="logo-img" style="width: 180px;" />
             <a href="homePage.html" class="home" style="font-size: 30px; color: #070707; text-decoration: none;">&#8962;</a>
@@ -68,10 +67,10 @@
         </li>
       </ul>
     </aside>
-
+   
     <main class="main-content">
       <div class="dashboard-header">
-        <h1>Settings</h1>
+        <h1>Reports</h1>
         <div class="user-profile">
           <div class="user-avatar">A</div>
           <div class="user-info">
@@ -80,42 +79,71 @@
           </div>
         </div>
       </div>
-
-      <div class="s-card">
-        <div class="card-header">
-          <h2 class="card-title">Account Settings</h2>
+     
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Cohort Performance</h2>
+            <p class="card-subtitle">Overall performance metrics by cohort</p>
+          </div>
+          <button class="btn generate-report-btn" data-report-type="cohort">Generate Report</button>
         </div>
-        <form id="settings-form">
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" value="admin@example.com">
+       
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Student Progress</h2>
+            <p class="card-subtitle">Individual student performance tracking</p>
           </div>
-          <div class="form-group">
-            <label for="password">Change Password</label>
-            <input type="password" id="password" placeholder="Enter new password">
+          <button class="btn generate-report-btn" data-report-type="student">Generate Report</button>
+        </div>
+       
+        <div class="card">
+          <div class="card-header">
+            <h2 class="card-title">Evaluation Summary</h2>
+            <p class="card-subtitle">Summary of all evaluations</p>
           </div>
-          <button type="button" class="S-btn" onclick="alert('Save settings functionality to be implemented')">Save Changes</button>
-        </form>
+          <button class="btn generate-report-btn" data-report-type="evaluation">Generate Report</button>
+        </div>
       </div>
-
-      <div class="s-card" style="margin-top: 1.5rem;">
-        <div class="card-header">
-          <h2 class="card-title">System Settings</h2>
+ 
+      <!-- Custom Reports Section -->
+      <div class="custom-reports-section">
+        <div class="section-header">
+          <h2>Custom Reports</h2>
+          <button class="btn create-report-btn">
+            <i class="fas fa-plus"></i> Create New
+          </button>
         </div>
-        <form id="system-settings-form">
-          <div class="form-group">
-            <label for="notifications">Email Notifications</label>
-            <select id="notifications">
-              <option value="all">All Notifications</option>
-              <option value="important">Important Only</option>
-              <option value="none">None</option>
-            </select>
-          </div>
-          <button type="button" class="S-btn" onclick="alert('Save system settings functionality to be implemented')">Save Changes</button>
-        </form>
+       
+        <div class="reports-table-container">
+          <table class="reports-table">
+            <thead>
+              <tr>
+                <th>Report Name</th>
+                <th>Type</th>
+                <th>Created By</th>
+                <th>Last Generated</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody id="reports-table-body">
+              <!-- Reports will be loaded here by JavaScript -->
+            </tbody>
+          </table>
+        </div>
       </div>
     </main>
   </div>
+ 
+  <!-- Toast notification -->
+  <div id="toast" class="toast">
+    <div class="toast-content">
+      <div class="toast-title">Success</div>
+      <div class="toast-message">Operation completed successfully</div>
+    </div>
+  </div>
+ 
   <script src="script.js"></script>
 </body>
 </html>
+ 

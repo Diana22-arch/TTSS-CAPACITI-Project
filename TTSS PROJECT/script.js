@@ -118,5 +118,178 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-
       /*end of evaluation page functionality*/
+
+      /*evaluation page functionality*/
+      // JavaScript for report page
+// Reports data - in a real application, this would come from an API
+const sampleReports = [
+    {
+      id: 1,
+      name: "Q2 Cohort Performance",
+      type: "cohort",
+      createdBy: "Admin User",
+      generatedAt: "2023-06-15"
+    },
+    {
+      id: 2,
+      name: "Web Development Student Progress",
+      type: "student",
+      createdBy: "Admin User",
+      generatedAt: "2023-07-10"
+    },
+    {
+      id: 3,
+      name: "Technical Interview Evaluations",
+      type: "evaluation",
+      createdBy: "Admin User",
+      generatedAt: "2023-08-05"
+    }
+  ];
+ 
+  // DOM elements
+  const reportsTableBody = document.getElementById('reports-table-body');
+  const generateReportButtons = document.querySelectorAll('.generate-report-btn');
+  const createReportBtn = document.querySelector('.create-report-btn');
+  const toast = document.getElementById('toast');
+ 
+  // Display reports in the table
+  function displayReports(reports) {
+    if (reports.length === 0) {
+      reportsTableBody.innerHTML = `
+        <tr>
+          <td colspan="5" class="empty-state">No reports found. Generate a report to get started.</td>
+        </tr>
+      `;
+      return;
+    }
+ 
+    reportsTableBody.innerHTML = reports.map(report => `
+      <tr>
+        <td>${report.name}</td>
+        <td>${capitalizeFirstLetter(report.type)}</td>
+        <td>${report.createdBy}</td>
+        <td>${formatDate(report.generatedAt)}</td>
+        <td>
+          <div class="action-buttons">
+            <button class="action-btn download-btn" data-id="${report.id}" title="Download">
+              <i class="fas fa-download"></i>
+            </button>
+            <button class="action-btn edit-btn" data-id="${report.id}" title="Edit">
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="action-btn delete delete-btn" data-id="${report.id}" title="Delete">
+              <i class="fas fa-trash"></i>
+            </button>
+          </div>
+        </td>
+      </tr>
+    `).join('');
+ 
+    // Add event listeners to action buttons
+    document.querySelectorAll('.download-btn').forEach(btn => {
+      btn.addEventListener('click', () => handleDownload(parseInt(btn.dataset.id)));
+    });
+ 
+    document.querySelectorAll('.edit-btn').forEach(btn => {
+      btn.addEventListener('click', () => handleEdit(parseInt(btn.dataset.id)));
+    });
+ 
+    document.querySelectorAll('.delete-btn').forEach(btn => {
+      btn.addEventListener('click', () => handleDelete(parseInt(btn.dataset.id)));
+    });
+  }
+ 
+  // Generate report handler
+  function handleGenerateReport(type) {
+    // In a real application, this would make an API call
+    showToast('Report Generated', `Your ${type} report has been generated successfully.`);
+   
+    // Simulate adding a new report
+    const newReport = {
+      id: sampleReports.length + 1,
+      name: `New ${capitalizeFirstLetter(type)} Report`,
+      type: type,
+      createdBy: "Admin User",
+      generatedAt: new Date().toISOString().split('T')[0]
+    };
+   
+    sampleReports.push(newReport);
+    displayReports(sampleReports);
+  }
+ 
+  // Download report handler
+  function handleDownload(id) {
+    const report = sampleReports.find(r => r.id === id);
+    showToast('Download Started', `Downloading ${report.name}...`);
+    // In a real application, this would initiate a file download
+  }
+ 
+  // Edit report handler
+  function handleEdit(id) {
+    const report = sampleReports.find(r => r.id === id);
+    showToast('Edit Report', `Editing ${report.name}...`);
+    // In a real application, this would open an edit form
+  }
+ 
+  // Delete report handler
+  function handleDelete(id) {
+    const report = sampleReports.find(r => r.id === id);
+    const confirmDelete = confirm(`Are you sure you want to delete "${report.name}"?`);
+   
+    if (confirmDelete) {
+      const index = sampleReports.findIndex(r => r.id === id);
+      sampleReports.splice(index, 1);
+      displayReports(sampleReports);
+      showToast('Report Deleted', `${report.name} has been deleted.`);
+    }
+  }
+ 
+  // Create new report handler
+  function handleCreateReport() {
+    showToast('Create Report', 'This functionality will be implemented in future versions.');
+    // In a real application, this would open a form to create a new report
+  }
+ 
+  // Show toast notification
+  function showToast(title, message) {
+    const toastTitle = toast.querySelector('.toast-title');
+    const toastMessage = toast.querySelector('.toast-message');
+   
+    toastTitle.textContent = title;
+    toastMessage.textContent = message;
+   
+    toast.classList.add('show');
+   
+    setTimeout(() => {
+      toast.classList.remove('show');
+    }, 3000);
+  }
+ 
+  // Helper function to capitalize the first letter of a string
+  function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+ 
+  // Helper function to format date
+  function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'short', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString(undefined, options);
+  }
+ 
+  // Add event listeners
+  generateReportButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const reportType = button.dataset.reportType;
+      handleGenerateReport(reportType);
+    });
+  });
+ 
+  createReportBtn.addEventListener('click', handleCreateReport);
+ 
+  // Initialize the page
+  document.addEventListener('DOMContentLoaded', () => {
+    displayReports(sampleReports);
+  });
+ 
+ /*end of the functionality*/
