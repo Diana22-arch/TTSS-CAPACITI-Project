@@ -875,7 +875,7 @@ form {
   background-color: #5a32b0;
 }
 
-/*end of seetings style sheet*/
+/*end of settings style sheet*/
 
 /*Report page style sheet*/
 .custom-reports-section {
@@ -995,6 +995,54 @@ form {
 /*end of report page style sheet*/
 
 /*students page style sheet*/
+/* Students Management */
+.filter-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+ 
+.filter-options {
+  display: flex;
+  gap: 20px;
+}
+ 
+.add-student-btn {
+  background-color: #6d3fcf;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  height: fit-content;
+}
+ 
+.students-table {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+ 
+.students-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+ 
+.students-table th {
+  background-color: #f8fafc;
+  color: #4a5568;
+  font-weight: 600;
+  padding: 12px;
+  text-align: left;
+  border-bottom: 2px solid #e2e8f0;
+}
+ 
+.students-table td {
+  padding: 12px;
+  border-bottom: 1px solid #e2e8f0;
+}
 /*end of students page style sheet*/
 
 /* Groups Management style*/
