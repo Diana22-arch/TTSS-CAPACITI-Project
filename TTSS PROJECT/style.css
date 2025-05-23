@@ -732,5 +732,75 @@ form button.login-btn {
 }
 /*end of evaluation page*/
 
+/*settings page style sheet*/
+/* Ensure main content respects sidebar width */
+.dashboard-container {
+  display: flex;
+}
+
+/* Sidebar is fixed, so offset the main content */
+.main-content {
+  margin-left: 250px; /* Adjust if your sidebar is wider/narrower */
+  padding: 2rem;
+  max-width: fit-content(20% 70); /* Prevent overflow */
+  box-sizing: border-box;
+}
+
+/* Forms shouldn't center unless explicitly told to */
+form {
+  width: 100%;
+  max-width: 600px;
+  align-content: center;
+  align-items: center;
+}
+
+/* Form section styling */
+.s-card {
+  background-color: #fff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  margin-bottom: 2rem;
+}
+
+/* Space between groups inside forms */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+/* Save button */
+.S-btn {
+  background-color: #6d3fcf;
+  color: white;
+  padding: 0.6rem 1.4rem;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.S-btn:hover {
+  background-color: #5a32b0;
+}
+
+/*end of seetings style sheet*/
+
+
+
 
 
