@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Reports - Tech Talent Scorecard System</title>
+  <title>Groups - Tech Talent Scorecard System</title>
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -67,11 +67,10 @@
         </li>
       </ul>
     </aside>
-
-    
+ 
     <main class="main-content">
       <div class="dashboard-header">
-        <h1>Reports</h1>
+        <h1>Groups Management</h1>
         <div class="user-profile">
           <div class="user-avatar">A</div>
           <div class="user-info">
@@ -80,71 +79,54 @@
           </div>
         </div>
       </div>
-     
-      <div class="card-grid">
-        <div class="card">
-          <div class="card-header">
-            <h2 class="card-title">Cohort Performance</h2>
-            <p class="card-subtitle">Overall performance metrics by cohort</p>
-          </div>
-          <button class="btn generate-report-btn" data-report-type="cohort">Generate Report</button>
+ 
+      <div class="filter-container">
+        <div class="filter-group">
+          <label for="cohort-filter">Filter by Cohort</label>
+          <select id="cohort-filter">
+            <option value="">All Cohorts</option>
+            <option value="ai-academy">AI Academy</option>
+            <option value="cloud-computing">Cloud Computing</option>
+            <option value="demand">Demand</option>
+          </select>
         </div>
-       
-        <div class="card">
-          <div class="card-header">
-            <h2 class="card-title">Student Progress</h2>
-            <p class="card-subtitle">Individual student performance tracking</p>
-          </div>
-          <button class="btn generate-report-btn" data-report-type="student">Generate Report</button>
-        </div>
-       
-        <div class="card">
-          <div class="card-header">
-            <h2 class="card-title">Evaluation Summary</h2>
-            <p class="card-subtitle">Summary of all evaluations</p>
-          </div>
-          <button class="btn generate-report-btn" data-report-type="evaluation">Generate Report</button>
-        </div>
+        <button class="add-group-btn">Add New Group</button>
       </div>
  
-      <!-- Custom Reports Section -->
-      <div class="custom-reports-section">
-        <div class="section-header">
-          <h2>Custom Reports</h2>
-          <button class="btn create-report-btn">
-            <i class="fas fa-plus"></i> Create New
-          </button>
-        </div>
-       
-        <div class="reports-table-container">
-          <table class="reports-table">
-            <thead>
-              <tr>
-                <th>Report Name</th>
-                <th>Type</th>
-                <th>Created By</th>
-                <th>Last Generated</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody id="reports-table-body">
-              <!-- Reports will be loaded here by JavaScript -->
-            </tbody>
-          </table>
-        </div>
+      <div class="groups-table">
+        <table>
+          <thead>
+            <tr>
+              <th>Group Name</th>
+              <th>Cohort</th>
+              <th>Members</th>
+              <th>Mentor</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Tech Devs</td>
+              <td>AI Academy</td>
+              <td>5</td>
+              <td>John Smith</td>
+              <td><span class="status-active">Active</span></td>
+              <td><a href="#" class="action-link">Manage</a></td>
+            </tr>
+            <tr>
+              <td>Data Team</td>
+              <td>AI Academy</td>
+              <td>4</td>
+              <td>Sarah Johnson</td>
+              <td><span class="status-active">Active</span></td>
+              <td><a href="#" class="action-link">Manage</a></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </main>
   </div>
- 
-  <!-- Toast notification -->
-  <div id="toast" class="toast">
-    <div class="toast-content">
-      <div class="toast-title">Success</div>
-      <div class="toast-message">Operation completed successfully</div>
-    </div>
-  </div>
- 
   <script src="script.js"></script>
 </body>
 </html>
- 
