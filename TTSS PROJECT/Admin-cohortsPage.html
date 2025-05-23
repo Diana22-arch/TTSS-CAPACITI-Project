@@ -119,6 +119,24 @@
             </form>
           </div>
         </div>
+
+         <div id="studentModal" class="modal">
+          <div class="modal-content">
+            <h2 id="studentModalTitle">Students in Cohort</h2>
+            <div id="studentList" class="student-list"></div>
+            <div class="add-student-form">
+              <div class="form-group">
+                <label for="newStudentName">Add New Student</label>
+                <input type="text" id="newStudentName" placeholder="Enter student name">
+                <button onclick="addStudent(currentCohort)" class="submit-btn">Add Student</button>
+              </div>
+            </div>
+            <div class="modal-buttons">
+              <button type="button" class="cancel-btn" onclick="closeStudentModal()">Close</button>
+              <button onclick="updateCohortStudents()" class="submit-btn">Save Changes</button>
+            </div>
+          </div>
+        </div>
         
         <div class="cohorts-table">
           <table>

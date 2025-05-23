@@ -38,7 +38,84 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
-/* Add new cohort functionality - End */
+
+// Initialize current cohort variable
+let currentCohort = '';
+ 
+// Student data
+let currentCohortStudents = {
+  'AI Academy': ['John Doe', 'Jane Smith', 'Mike Johnson'],
+  'Cloud Computing': ['Sarah Wilson', 'Tom Brown'],
+  'Demand': ['Alex Davis', 'Chris Lee']
+};
+ 
+// Cohort Modal Functions
+function openCohortModal() {
+  document.getElementById('cohortModal').style.display = 'block';
+}
+ 
+function closeCohortModal() {
+  document.getElementById('cohortModal').style.display = 'none';
+}
+ 
+// View button functionality - Start
+// Student Modal Functions
+function openStudentModal(cohortName) {
+  currentCohort = cohortName;
+  const modal = document.getElementById('studentModal');
+  const modalTitle = document.getElementById('studentModalTitle');
+  modalTitle.textContent = `${cohortName} - Students`;
+ 
+  renderStudentList(cohortName);
+  modal.style.display = 'block';
+}
+ 
+function closeStudentModal() {
+  const modal = document.getElementById('studentModal');
+  modal.style.display = 'none';
+  currentCohort = '';
+}
+// View button functionality - End
+ 
+function renderStudentList(cohortName) {
+  const studentList = document.getElementById('studentList');
+  const students = currentCohortStudents[cohortName] || [];
+ 
+  studentList.innerHTML = students.map(student => `
+    <div class="student-item">
+      <span>${student}</span>
+      <span class="remove-student" onclick="removeStudent('${cohortName}', '${student}')">×</span>
+    </div>
+  `).join('');
+}
+ 
+function addStudent(cohortName) {
+  const studentInput = document.getElementById('newStudentName');
+  const studentName = studentInput.value.trim();
+ 
+  if (studentName) {
+    if (!currentCohortStudents[cohortName]) {
+      currentCohortStudents[cohortName] = [];
+    }
+    currentCohortStudents[cohortName].push(studentName);
+    renderStudentList(cohortName);
+    studentInput.value = '';
+  }
+}
+ 
+function removeStudent(cohortName, studentName) {
+  currentCohortStudents[cohortName] = currentCohortStudents[cohortName].filter(
+    student => student !== studentName
+  );
+  renderStudentList(cohortName);
+}
+ 
+function updateCohortStudents() {
+  // Here you would typically send the updated data to your backend
+  closeStudentModal();
+}
+ 
+/* new cohort functionality - End */
 
 /*Evaluation functionality*/
 // JavaScript for handling score selection and comments display
