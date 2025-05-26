@@ -860,3 +860,5 @@ if ('serviceWorker' in navigator) {
 
 // end of the Student notification page
 
+//Dashboard page functionality
+
