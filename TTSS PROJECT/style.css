@@ -1572,5 +1572,78 @@ form {
   }
 }
 
- /*end of the notfication pa
+ /*end of the notfication page*/
+
+ /* STUDENT PROFILE PAGE STYLES - START      */
+.profile-section {
+  margin-top: 1rem;
+}
+ 
+.profile-form-container {
+  background-color: white;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+ 
+.profile-form .form-group {
+  margin-bottom: 1.5rem;
+}
+ 
+.profile-form .form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #4a5568;
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+ 
+.profile-form .form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+}
+ 
+.profile-form .form-control:focus {
+  outline: none;
+  border-color: #6d3fcf;
+  box-shadow: 0 0 0 3px rgba(109, 63, 207, 0.1);
+}
+ 
+.profile-form select.form-control {
+  background-color: white;
+  cursor: pointer;
+}
+ 
+.form-actions {
+  margin-top: 2rem;
+  
+}
+ 
+.btn-primary {
+  background-color: #6d3fcf;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+ 
+.btn-primary:hover {
+  background-color: #553c9a;
+}
+ 
+.profile-form input[type="password"] {
+  font-family: 'Inter', sans-serif;
+}
+/* STUDENT PROFILE PAGE STYLES - END        */
+ 
 
