@@ -1104,6 +1104,42 @@ form {
 }
 /*end of group page style*/
 
+/*Mentors page style sheet*/
+  .m-card {
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  display: flex;
+  justify-content: center;
+  overflow-x: auto;
+}
 
+/* Ensure the table doesn't look too small */
+.m-card .evaluation-table {
+  width: 90%;
+  max-width: 1000px;
+  min-width: 600px;
+  font-size: 1rem;
+}
+
+/* Optional: add space below the button */
+.form-controls {
+  margin-bottom: 1.5rem;
+}
+
+.view-link {
+  color: #000000;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.view-link:hover {
+  text-decoration: underline;
+}
+
+
+/*End of mentors page style*/
 
 
